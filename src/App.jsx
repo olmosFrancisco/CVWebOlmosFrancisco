@@ -66,52 +66,41 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-800/50">
       
-      {/* --- HEADER --- */}
-      <header className="bg-slate-900 border-b border-slate-800 p-8 md:p-12 sticky top-0 z-50 backdrop-blur-sm bg-slate-900/90">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
-          {/* Foto con gradiente de borde */}
-          <div className="relative p-1 rounded-full bg-gradient-to-br from-blue-500 via-slate-700 to-emerald-500 shadow-2xl">
-            <img 
-              src={foto} 
-              alt="Francisco Tomás Olmos Sandin" 
-              className="w-36 h-36 rounded-full object-cover border-4 border-slate-900"
-            />
-          </div>
-          
-          {/* Nombre y Título */}
-          <div className="text-center md:text-left flex-1 space-y-2">
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-              Francisco Tomás<br /> Olmos Sandin
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-200 font-light tracking-wide flex items-center gap-2 justify-center md:justify-start">
-              <Icon path="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" className="w-6 h-6 text-blue-400" />
-              Ingeniería en Sistemas de Información
-            </p>
-            <p className="text-slate-400 text-sm font-mono bg-slate-800 px-3 py-1 rounded-full inline-block">22 años | 5to Año</p>
-          </div>
-          
-          {/* Cuadro de Contacto Rápido */}
-          <div className="bg-slate-800/60 p-6 rounded-3xl border border-slate-700 w-full md:w-auto space-y-3.5 shadow-inner">
-            <h3 className="text-lg font-bold text-slate-100 mb-4 border-b border-slate-700 pb-2 flex items-center gap-2.5">
-              <Icon path="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19a2 2 0 01-2 2H5a2 2 0 01-2-2z" className="w-5 h-5 text-emerald-400" />
-              Información de Contacto
-            </h3>
-            {contacto.map(item => (
-              item.href ? (
-                <a key={item.label} href={item.href} className="flex items-center gap-3.5 text-slate-300 hover:text-blue-400 transition-colors text-sm break-all font-mono">
-                  <Icon path={item.icon} className="w-4 h-4 text-slate-500" />
-                  {item.label}
+      {/* --- HEADER INTELIGENTE --- */}
+        <header className="bg-slate-900 border-b border-slate-800 p-6 md:p-8 relative md:sticky top-0 z-50 backdrop-blur-md bg-slate-900/95">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            
+            {/* Foto: Más chica en mobile (w-20), normal en PC (md:w-32) */}
+            <div className="relative p-1 rounded-full bg-gradient-to-br from-blue-500 via-slate-700 to-emerald-500 shadow-xl">
+              <img 
+                src={foto} 
+                alt="Francisco Olmos" 
+                className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-4 border-slate-900"
+              />
+            </div>
+            
+            {/* Nombre: Achicamos fuente en mobile (text-2xl) */}
+            <div className="text-center md:text-left flex-1">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                Francisco Tomás<br className="hidden md:block" /> Olmos Sandin
+              </h1>
+              <p className="text-base md:text-xl text-slate-300 font-light mt-1">
+                Ingeniería en Sistemas de Información
+              </p>
+            </div>
+
+            {/* Contacto: En mobile lo hacemos más simple para que no ocupe alto */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col gap-2 w-full md:w-auto bg-slate-800/30 p-4 rounded-xl border border-slate-700/50">
+              {contacto.map(item => (
+                <a key={item.label} href={item.href} className="flex items-center gap-2 text-slate-300 text-[12px] md:text-sm font-mono hover:text-blue-400 transition-colors">
+                  <Icon path={item.icon} className="w-4 h-4 text-slate-500 shrink-0" />
+                  <span className="truncate">{item.label}</span>
                 </a>
-              ) : (
-                <div key={item.label} className="flex items-center gap-3.5 text-slate-300 text-sm font-mono">
-                  <Icon path={item.icon} className="w-4 h-4 text-slate-500" />
-                  {item.label}
-                </div>
-              )
-            ))}
+              ))}
+            </div>
+
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* --- CONTENIDO PRINCIPAL (LAYOUT) --- */}
       <main className="max-w-7xl mx-auto p-8 md:p-12">
