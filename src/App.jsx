@@ -66,41 +66,53 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-800/50">
       
-      {/* --- HEADER INTELIGENTE --- */}
-        <header className="bg-slate-900 border-b border-slate-800 p-6 md:p-8 relative md:sticky top-0 z-50 backdrop-blur-md bg-slate-900/95">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
+      {/* --- HEADER INTELIGENTE CON DATOS ACADÉMICOS --- */}
+      <header className="bg-slate-900 border-b border-slate-800 p-5 md:p-8 relative md:sticky top-0 z-50 backdrop-blur-md bg-slate-900/95">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-5 md:gap-10">
+          
+          {/* Foto adaptable */}
+          <div className="relative p-1 rounded-full bg-gradient-to-br from-blue-500 via-slate-700 to-emerald-500 shadow-xl shrink-0">
+            <img 
+              src={foto} 
+              alt="Francisco Olmos" 
+              className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-4 border-slate-900"
+            />
+          </div>
+          
+          {/* Nombre, Título y Tags Académicos */}
+          <div className="text-center md:text-left flex-1">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+              Francisco Tomás<br className="hidden md:block" /> Olmos Sandin
+            </h1>
             
-            {/* Foto: Más chica en mobile (w-20), normal en PC (md:w-32) */}
-            <div className="relative p-1 rounded-full bg-gradient-to-br from-blue-500 via-slate-700 to-emerald-500 shadow-xl">
-              <img 
-                src={foto} 
-                alt="Francisco Olmos" 
-                className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-4 border-slate-900"
-              />
-            </div>
-            
-            {/* Nombre: Achicamos fuente en mobile (text-2xl) */}
-            <div className="text-center md:text-left flex-1">
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                Francisco Tomás<br className="hidden md:block" /> Olmos Sandin
-              </h1>
-              <p className="text-base md:text-xl text-slate-300 font-light mt-1">
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 mt-2">
+              <p className="text-sm md:text-lg text-slate-300 font-light">
                 Ingeniería en Sistemas de Información
               </p>
+              {/* Estos son los datos que querías mantener, ahora más estilizados */}
+              <div className="flex gap-2">
+                <span className="text-[10px] md:text-xs font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md border border-slate-700">
+                  22 años
+                </span>
+                <span className="text-[10px] md:text-xs font-mono bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded-md border border-blue-500/20">
+                  5to Año
+                </span>
+              </div>
             </div>
-
-            {/* Contacto: En mobile lo hacemos más simple para que no ocupe alto */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col gap-2 w-full md:w-auto bg-slate-800/30 p-4 rounded-xl border border-slate-700/50">
-              {contacto.map(item => (
-                <a key={item.label} href={item.href} className="flex items-center gap-2 text-slate-300 text-[12px] md:text-sm font-mono hover:text-blue-400 transition-colors">
-                  <Icon path={item.icon} className="w-4 h-4 text-slate-500 shrink-0" />
-                  <span className="truncate">{item.label}</span>
-                </a>
-              ))}
-            </div>
-
           </div>
-        </header>
+
+          {/* Contacto: Compacto y en Grilla para Mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col gap-2 w-full md:w-auto bg-slate-800/30 p-4 rounded-xl border border-slate-700/50">
+            {contacto.map(item => (
+              <a key={item.label} href={item.href} className="flex items-center gap-2 text-slate-300 text-[11px] md:text-sm font-mono hover:text-blue-400 transition-colors">
+                <Icon path={item.icon} className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <span className="truncate">{item.label}</span>
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </header>
 
       {/* --- CONTENIDO PRINCIPAL (LAYOUT) --- */}
       <main className="max-w-7xl mx-auto p-8 md:p-12">
