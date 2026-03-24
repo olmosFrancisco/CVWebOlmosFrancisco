@@ -71,25 +71,32 @@ function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-5 md:gap-10">
           
           {/* Foto adaptable */}
-          {/* Nombre, Título y Tags con Estética Original */}
-          <div className="text-center md:text-left flex-1 space-y-3">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 leading-tight">
+          <div className="relative p-1 rounded-full bg-gradient-to-br from-blue-500 via-slate-700 to-emerald-500 shadow-xl shrink-0">
+            <img 
+              src={foto} 
+              alt="Francisco Olmos" 
+              className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-4 border-slate-900"
+            />
+          </div>
+          
+          {/* Nombre, Título y Tags Académicos */}
+          <div className="text-center md:text-left flex-1">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
               Francisco Tomás<br className="hidden md:block" /> Olmos Sandin
             </h1>
             
-            <p className="text-lg md:text-2xl text-slate-200 font-light tracking-wide flex items-center gap-2 justify-center md:justify-start">
-              <Icon path="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" className="w-6 h-6 text-blue-400 hidden md:block" />
-              Ingeniería en Sistemas de Información
-            </p>
-
-            {/* Los Badges Originales que te gustaban */}
-            <div className="flex justify-center md:justify-start gap-3 mt-4">
-              <span className="text-slate-400 text-sm font-mono bg-slate-800 px-4 py-1.5 rounded-full border border-slate-700 shadow-sm">
-                22 años
-              </span>
-              <span className="text-blue-300 text-sm font-mono bg-blue-600/20 px-4 py-1.5 rounded-full border border-blue-500/30 shadow-sm">
-                5to Año
-              </span>
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 mt-2">
+              <p className="text-sm md:text-lg text-slate-300 font-light">
+                Ingeniería en Sistemas de Información
+              </p>
+              {/* Estos son los datos que querías mantener, ahora más estilizados */}
+              <div className="flex gap-2">
+                <div className="flex justify-center md:justify-start">
+              <p className="text-slate-400 text-sm font-mono bg-slate-800 px-3 py-1 rounded-full inline-block">
+                22 años | 5to Año
+              </p>
+            </div>
+              </div>
             </div>
           </div>
 
