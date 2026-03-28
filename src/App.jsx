@@ -17,7 +17,7 @@ const contacto = [
 
 const techSkills = ['Python', 'Java', 'C', 'C++', 'Git'];
 const softSkills = ['Trabajo en equipo', 'Aprendizaje rápido', 'Resolución de problemas', 'Responsabilidad y compromiso', 'Buena comunicación'];
-const idiomas = [{ lang: 'Español', nivel: 'Nativo' }, { lang: 'Inglés', nivel: 'B1 (Avanzado)' }];
+const idiomas = [{ lang: 'Español', nivel: 'Nativo' }, { lang: 'Inglés', nivel: 'B2 Upper-intermediate profficient in speaking, reading and writing' }];
 
 // Secciones Principales (Layout Izquierdo)
 const MAIN_SECTIONS = [
