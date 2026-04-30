@@ -15,7 +15,7 @@ const contacto = [
   { label: 'Córdoba Capital, Argentina', icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
 ];
 
-const techSkills = ['Python', 'Java', 'C', 'C++', 'Git'];
+const techSkills = ['Python', 'SQL', 'React', 'IoT', 'Java', 'C', 'C++', 'Git'];
 const softSkills = ['Trabajo en equipo', 'Aprendizaje rápido', 'Resolución de problemas', 'Responsabilidad y compromiso', 'Buena comunicación'];
 const idiomas = [{ lang: 'Español', nivel: 'Nativo' }, { lang: 'Inglés', nivel: 'B2 Upper-Intermediate. Proficient in speaking, reading, and writing' }];
 
